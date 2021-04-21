@@ -1,0 +1,18 @@
+cust = int(input())
+budget = [0]*cust
+for i in range(cust):
+    budget[i] = int(input())
+total_bugt = 0
+total_bugt_list = [0]*cust
+for i in range(cust):
+    total_bugt =  0
+    for j in range(cust):
+        if(budget[i] <= budget[j]):
+            total_bugt += budget[i]
+    total_bugt_list[i] = total_bugt
+max_budget = total_bugt_list[0]
+for i in range(len(total_bugt_list)):
+    if(max_budget < total_bugt_list[i]):
+        max_budget = total_bugt_list[i]
+
+print(max_budget)
