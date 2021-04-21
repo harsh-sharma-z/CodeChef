@@ -1,0 +1,34 @@
+# cook your dish here
+t = int(input())
+for _ in range(t):
+    k,d,e = map(int,input().split())
+    f = d + e
+    total = f
+    if k == 2:
+        if total % 3 == 0:
+            print("YES")
+        else:
+            print("NO") 
+    else:
+        k = k - 2
+        if k > 0:
+            total += (f) % 10
+            k -= 1
+        ans = ((2 * f) % 10) + ((4 * f) % 10) + ((8 * f) % 10) + ((6 * f) % 10)
+        # print(ans)
+        total += ((k // 4) * ans)
+        k = k % 4
+        p = 2
+        while k > 0:
+            total += (p * f) % 10 
+            k -= 1
+            p = (p * 2) % 10
+        if total % 3 == 0:
+            print("YES")
+        else:
+            print("NO")
+        
+        
+        
+        
+        
