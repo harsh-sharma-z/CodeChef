@@ -15,37 +15,38 @@ using namespace std;
 #define tie cin.tie(NULL),cout.tie(NULL) 
 
 
-int gcd(vector<int>& harsh, int N)
-{
-    if (N== harsh.size() - 1) {
-        return harsh[N];
-    }
-
-    int a = harsh[N];
-    int b = gcd(harsh, N + 1);
-    return __gcd(a,b); 
-}
-
 int main() {
   // your code goes here
   int T;
   cin >> T;
   while(T--)
   {
-      int n,N;
-      vector<int > harsh  ;
+      int n;
       cin>>n;
-      f(i,0,n)
+      int arr[n];
+      if(n>1)
       {
-          int temp;
-          cin>>temp;
-          harsh.push_back(temp);
+      	f(i,0,n)
+      	{
+      		cin>>arr[i];
+
+      	}
+
+      	ll ans=0;
+
+      	f(i,0,n)
+      	{
+      		ans= __gcd((int)ans,arr[i]);
+      	}
+      	cout<<n*ans<<endl;
       }
-       sort(harsh.begin(),harsh.end());
-       int ans=gcd(harsh, 0) ;
-      
-      
-     cout << ans*n <<endl;
+      else
+      	if(n==1)
+      	{
+      		int a;
+      		cin>>a;
+      		cout<<a<<endl;
+      	}
       
   }
   return 0;
